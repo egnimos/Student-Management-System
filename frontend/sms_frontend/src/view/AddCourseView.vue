@@ -93,8 +93,8 @@ onMounted(() => loadCourseData());
 <template>
     <div class="px-2 py-4">
         <h1 class="fs-2 fw-semibold text-center mx-auto mb-1">
-            <i class="pi pi-user"></i>
-            Add Student Details
+            <i class="pi pi-course"></i>
+            Add Course Details
         </h1>
         <hr>
         <form @submit.prevent="saveCourse" class="row g-3 mt-4">

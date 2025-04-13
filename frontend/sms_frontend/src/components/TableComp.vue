@@ -79,6 +79,9 @@ console.log(columns)
               <img :src="d[ci]" alt="profile-image" class="img-thumbnail rounded float-start" width="100"
                 height="100">
             </div>
+            <div v-else-if="c.toLowerCase().includes('marksheet')">
+              <a :href="d[ci]" download>Download Marksheet</a>
+            </div>
             <div v-else>
               {{ d[ci] }}
             </div>

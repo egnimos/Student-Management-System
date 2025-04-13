@@ -10,7 +10,7 @@ import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 
 const route = useRoute()
 const router = useRouter()
-const columns = ["Id", "Grade", "Marksheet", 'Delete', 'Update']
+const columns = ["Id", "Grade", "Marksheet File", 'Delete', 'Update']
 console.log(route.query.data)
 const studentData = JSON.parse(route.query.data);
 
