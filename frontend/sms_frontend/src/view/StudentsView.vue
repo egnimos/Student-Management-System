@@ -5,6 +5,7 @@ import axios from 'axios';
 import { onMounted, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import Cookies from 'js-cookie';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 
 const router = useRouter()
 
@@ -15,7 +16,6 @@ const stateData = reactive({
 
 async function loadStudentData() {
     try {
-        stateData.isLoading = true;
         const response = await axios.get(`/api/students/`)
         stateData.students = response.data
         console.log(response.data)
@@ -85,7 +85,8 @@ onMounted(() => loadStudentData())
 </script>
 
 <template>
-    <div class="pt-5 align-item-center">
+    <PulseLoader v-if="stateData.isLoading"/>
+    <div v-else class="pt-5 align-item-center">
         <div class="row">
             <div class="col-9 col-sm-9">
                 <h4 class="fw-600 fs-3">Students</h4>

@@ -5,7 +5,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import routes from "./routes";
 import AddStudentView from "@/view/AddStudentView.vue";
 import AddCourseView from "@/view/AddCourseView.vue";
-import CourseDetailView from "@/view/CourseDetailView.vue";
+// import CourseDetailView from "@/view/CourseDetailView.vue";
 import StudentDetailView from "@/view/StudentDetailView.vue";
 import AddEnrollementView from "@/view/AddEnrollementView.vue";
 
@@ -55,11 +55,11 @@ const router = createRouter({
             name: "student_d_view",
             component: StudentDetailView
         },
-        {
-            path: routes.course_view + '/:id',
-            name: "course_d_view",
-            component: CourseDetailView
-        },
+        // {
+        //     path: routes.course_view + '/:id',
+        //     name: "course_d_view",
+        //     component: CourseDetailView
+        // },
 
         {
             path: routes.add_enrollement,

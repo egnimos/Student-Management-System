@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 import { onMounted, reactive } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useToast } from 'vue-toastification';
-
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 
 const route = useRoute()
 const router = useRouter()
@@ -140,11 +140,12 @@ onMounted(() => loadStudentData());
                         width="200" height="200">
                 </div>
                 <input type="file" class="form-control" v-on:change="onFileChange" id="student-profile-image"
-                    accept="image/*" required>
+                    accept="image/*" >
             </div>
 
             <!-- submit -->
-            <div class="col-12">
+            <PulseLoader v-if="isSaving"/>
+            <div v-else class="col-12">
                 <button class="btn btn-secondary" type="submit">
                     <i class="pi pi-save"></i>
                     Save</button>

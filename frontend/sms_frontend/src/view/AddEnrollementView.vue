@@ -5,7 +5,7 @@ import { useToast } from 'vue-toastification';
 import { reactive } from 'vue';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 
 const route = useRoute()
 const router = useRouter()
@@ -188,7 +188,8 @@ onMounted(async () => {
             </div>
 
             <!-- submit -->
-            <div class="col-12">
+            <PulseLoader v-if="isSaving"/>
+            <div v-else class="col-12">
                 <button class="btn btn-secondary" type="submit">
                     <i class="pi pi-save"></i>
                     Save</button>
